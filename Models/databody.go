@@ -72,6 +72,10 @@ type UpdateApplicationFormTestV1Request struct {
 }
 
 type CaesarMobileStoragePutCheck struct {
+	Data CaesarMobileStoragePutCheckData `json:"data"`
+}
+
+type CaesarMobileStoragePutCheckData struct {
 	ID       string `json:"id"`
 	AssetID  string `json:"asset_id"`
 	AssetOID string `json:"asset_oid"`

@@ -69,14 +69,14 @@ func UpdateApplicationFormTestV1(c *gin.Context) {
 	} else {
 		authValue = strings.Split(authValue, "\n")[0]
 		//请求Caesar
-		caesarRequest := Models.CaesarMobileStoragePutCheck{
+		caesarRequest := Models.CaesarMobileStoragePutCheck{Data: Models.CaesarMobileStoragePutCheckData{
 			ID:       person.ID,
 			AssetID:  person.AssetId,
 			AssetOID: person.AssetOID,
 			Reason:   person.Reason,
 			Status:   person.Status,
-		}
-		logger.Logger.Info(caesarRequest.ID)
+		}}
+		logger.Logger.Info(caesarRequest.Data.ID)
 		reqBytes, err := json.Marshal(caesarRequest)
 		if err != nil {
 			logger.Logger.Error("请求数据转化失败:" + err.Error())
