@@ -14,6 +14,8 @@ func main() {
 	v1 := router.Group("/")
 	{
 		v1.POST("AcceptApplicationForm", Services.AcceptApplicationForm)
+		v1.POST("BatchGetApplicationForm", Services.BatchGetApplicationForm)
+		v1.POST("UpdateApplicationFormTestV1", Services.UpdateApplicationFormTestV1)
 	}
 	router.Run(":8080")
 }

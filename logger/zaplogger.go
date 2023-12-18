@@ -42,11 +42,15 @@ func LoggerMiddleware() gin.HandlerFunc {
 		path := c.Request.URL.Path
 		query := c.Request.URL.RawQuery
 		method := c.Request.Method
+		//body, _ := ioutil.ReadAll(c.Request.Body)
 		c.Next() // 执行其他中间件和处理程序
 		end := time.Now()
 		latency := end.Sub(start)
 		statusCode := c.Writer.Status()
 		Logger.Info("LoggerMiddleware 完成初始化～")
-		Logger.Info("Request completed", zap.String("path", path), zap.String("query", query), zap.String("method", method), zap.Int("status", statusCode), zap.Duration("latency", latency))
+		Logger.Info("Request completed", zap.String("path", path), zap.String("query", query),
+			zap.String("method", method), zap.Int("status", statusCode), zap.Duration("latency", latency),
+			//zap.String("body", string(body)))
+		)
 	}
 }
