@@ -1,0 +1,8 @@
+DataConfig:
+#  host: "localhost"
+  host: "10.48.57.149"
+  port: "55433"
+  user: "postgres"
+  password: "ops123!"
+  dbname: "mobile-storage-test"
+
